@@ -1,6 +1,6 @@
-# Tasks
+# タスク
 
-Sometimes you need to explicitly execute some code on the server. Volt solves this problem through *tasks*. You can define your own tasks by inheriting from ```TaskHandler```. Ruby files in a ```tasks``` folder, which end with ```_tasks.rb``` will be automatically required.  All tasks should inherit from ```TaskHandler```.
+明示的にサーバー上でコードを実行したいこともあるでしょう。Volt では *タスク* を使ってこの問題を解決します。タスクは ```TaskHandler```.を継承することで定義できます。```tasks``` フォルダーに格納された ```_task.rb``` で終わる名前の Ruby ファイルは自動的に require されます。すべてのタスクは ```TaskHandler``` を継承しなければなりません。
 
 ```ruby
     # app/main/tasks/logging_tasks.rb
@@ -12,9 +12,9 @@ Sometimes you need to explicitly execute some code on the server. Volt solves th
     end
 ```
 
-Volt will automatically generate wrappers for you on the client side which will return a promise.
+このとき、Volt は自動的に、promise を返すラッパーをクライアントサイドで生成します。
 
-*Note that the classes on the server side use instance methods while the wrapper classes represent those methods as class methods*  For more information on using promises in ruby see [here](http://opalrb.org/blog/2014/05/07/promises-in-opal/).
+*サーバーサイドのクラスはインスタンスメソッドを使いますが、ラッパークラスにおいては、それらのメソッドがクラス・メソッドとなることに注意してください。* Ruby で promise を利用することについてのより詳しい情報は [こちら](http://opalrb.org/blog/2014/05/07/promises-in-opal/) を参照してください。
 
 ```ruby
     class Contacts < ModelController
@@ -24,7 +24,7 @@ Volt will automatically generate wrappers for you on the client side which will 
     end
 ```
 
-You can use the ```#then``` method of the returned promise to get the result of the call.  You can use the ```#fail``` method on the promise to get any thrown errors.
+戻り値の promise に対して ```#then``` メソッドを実行すると、その呼び出しの結果を得ることができます。また、スローされたエラーを取得したければ、promise に対して ```#fail``` を実行します。
 
 ```ruby
     MathTasks.add(23, 5).then do |result|
