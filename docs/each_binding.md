@@ -1,6 +1,6 @@
-# Each binding
+# Each バインディング
 
-For iteration over objects, you can use ```.each```
+オブジェクトのイテレーション操作のために、```each``` バインディングを利用することができます。
 
 ```html
 {{ _items.each do |item| }}
@@ -8,9 +8,9 @@ For iteration over objects, you can use ```.each```
 {{ end }}
 ```
 
-Above, if ```_items``` is an array, the block will be rendered for each item in the array, setting ```item``` to the value of the array element.
+上記では、```_item``` が配列だった場合、```item``` に配列の各要素の値がセットされ、ブロックはその要素それぞれに対してレンダリングを行います。
 
-#index メソッドを使うことで、配列の各要素の位置を得ることもできます。
+また、#index メソッドを使うことで、配列の各要素の位置を得ることもできます。
 
 ```html
 {{ each _items do |item| }}
@@ -20,12 +20,12 @@ Above, if ```_items``` is an array, the block will be rendered for each item in 
 
 Note: This will be switched to each_with_index
 
-For the array: ```['one', 'two', 'three']``` this would print:
+例えば、```['one', 'two', 'three']``` という配列の場合であれば、以下のように出力されます。
 
     0. one
     1. two
     2. three
 
-You can do ```{{ index + 1 }}``` to correct the zero offset.
+ゼロオフセットを修正したければ ```{{ index + 1 }}``` としてください。
 
-When items are removed or added to the array, the ```each``` binding automatically and intelligently adds or removes the items from/to the DOM.
+配列の要素が追加または削除された場合には、```each ``` バインディングは自動的に要素を DOM に追加、もしくは DOM から削除します。

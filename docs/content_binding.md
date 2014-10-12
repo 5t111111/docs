@@ -1,9 +1,9 @@
-# Content binding
+# コンテンツバインディング
 
-もっとも基本的なバインディングはコンテンツのバインディングです。
+もっとも基本的なバインディングはコンテンツバインディングです。
 
 ```html
 <p>Hello {{ name }}</p>
 ```
 
-コンテンツのバインディングとは、{ と } の間のRubyコードを実行し、その戻り値をレンダリングするものです。Any time the data a content binding relies on changes, the binding will run again and update the text.  Text in content bindings is html escaped by default.
+コンテンツバインディングとは、{ と } の間の Ruby コードを実行し、その戻り値をレンダリングするものです。バインディングされているコンテンツのデータが変更を監視されていれば、その変更に応じてテキストが更新されます。コンテンツバインディングされたテキストは、デフォルトでエスケープされます。

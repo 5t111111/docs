@@ -1,21 +1,21 @@
 # ビュー
 
-Voltでは、ビューにHandlebarsに似たテンプレート言語を使用します。ビューはセクションに分割することができます。例えば、セクションヘッダーは以下のようになります。
+Volt では、Handlebars に似たテンプレート言語を使用してビューを作成します。ビューはセクションに分割することができます。例えば、セクションヘッダーは以下のようになります。
 
 ```html
 <:Body>
 ```
 
-セクションヘッダーは先頭が大文字で始まる必要があります。[コントロール](#コントロール)と混同しないようにしてください。また、セクションヘッダーに閉じタグは使いません。If no section header is provided, the Body section is assumed.
+セクションヘッダーは先頭が大文字で始まる必要があります。[コントロール](#コントロール)と混同しないようにしてください。また、セクションヘッダーに閉じタグは使いません。もしセクションヘッダーを書かなかった場合は、Body セクションであるとして扱います。
 
 セクションは同じファイル上のコンテンツの異なるパーツ(タイトルと本文など)を区別するのに役立ちます。
 
-# Bindings
+# バインディング
 
-In Volt, views are written in a simple template language where ruby can be inserted anywhere between ```{{``` and ```}}```.  Volt lets you use the usual flow control statements in views (```if's```, ```elsif```, ```else```, ```each```)  You can also render other views using the ```template``` binding.
+Volt では、ビューはシンプルなテンプレート言語で記述し、 ```{{``` と ```}}``` で囲むことで、どこにでも Ruby のコードを挿入することができます。また、Volt では、一般的な制御文 (```if```、```elsif```、```else```、```each```) をビューに記述することが可能です。 更に、```template``` バインディングを使うことで、他のビューをレンダリングすることもできます。
 
-# Controller Backing
+# ビューの裏にあるコントローラー
 
-While we use the controller terminology, Volt is closer to a MVVM framework.  Any method call or instance variable lookup runs in the context of a controller.  The controller
+Volt では、「コントローラー」という言葉を使いますが、実際には MVVM フレームワークに近いものです。すべてのメソッド呼び出しやインスタンス変数の探索はコントローラーのコンテキストで実行されます。コントローラー
 
-If you have a view at ```app/home/views/index/index.html``` it will load the controller at ```app/home/controller/index_controller.rb```.
+もしビューが ```app/home/views/index/index.html``` であるならば、```app/home/controller/index_controller.rb``` をコントローラーとして読み込みます。

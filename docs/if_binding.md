@@ -1,6 +1,6 @@
-# If binding
+# If バインディング
 
-ifバインディングは、基本的な制御文を提供します。
+If バインディングは、基本的な制御文を提供します。
 
 ```html
 {{ if _some_check?}}
@@ -8,11 +8,11 @@ ifバインディングは、基本的な制御文を提供します。
 {{ end }}
 ```
 
-Blocks are closed with a ```{{ end }}```
+ブロックは ```{{ end }}``` で閉じます。
 
-When the if binding is rendered, it will run the ruby code after if.  そのコードが真の場合にのみ、下のコードがレンダリングされます。Again, any changes to the branch check code will update the showing branch.
+If バインディングがレンダリングされるときは、if に続く Ruby コードが実行されます。そして、そのコードが真の場合にのみ後続のコードがレンダリングされます。このとき、分岐条件に対して変更があったときには、それに伴い表示される内容が更新されます。
 
-If bindings can also have ```elsif``` and ```else``` blocks.
+また、If バインディングは ```elsif``` と ```else``` ブロックを持つことができます。
 
 ```html
 {{ if _condition_1?}}

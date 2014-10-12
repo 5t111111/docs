@@ -1,41 +1,41 @@
-# Attribute Bindings
+# 属性バインディング
 
-バインディングは属性内にも配置することができます。
+バインディングは属性の内部にも配置することができます。
 
 ```html
 <p class="{{ if _is_cool?}}cool{{ end }}">Text</p>
 ```
 
-また、要素を"双方向バインディング"とするため、特別な機能が提供されます。
+また、要素を「双方向バインディング」とするための特別な機能が提供されています。
 
 ```html
 <input type="text" value="{{ _name }}" />
 ```
 
-## CheckBoxes
+## チェックボックス
 
-In the example above, if ```_name``` changes, the field will update, and if the field is updated, ```_name``` will be changed:
+上記の例で、```_name``` が変更された場合にはフィールドも更新されます。逆に、フィールドが更新された場合には ```_name``` も変更されます。
 
 ```html
 <input type="checkbox" checked="{{ _checked }}" />
 ```
 
-If the value of a checked attribute is ```true```, the checkbox will be shown checked. If it's checked or unchecked, the value will be updated to ```true``` or ```false``` respectively.
+この例では、checked属性の値が ```true``` であるとき、チェックボックスはチェックされた状態になります。そして、「チェックされた or チェック解除された」という状態の変化に応じて、値が ```true``` または ```false``` に更新されます。
 
-## Radio Buttons
+## ラジオボタン
 
-ラジオボタンもcheckedにバインドすることができますが、true/falseの代わりに与えられたフィールドの値がセットされます。
+ラジオボタンも checked の状態に対してバインドすることができますが、true or false の代わりに、与えられたフィールドの値がセットされます。
 
 ```html
 <input type="radio" checked="{{ _radio }}" value="one" />
 <input type="radio" checked="{{ _radio }}" value="two" />
 ```
 
-ラジオボタンがチェックされたとき、checkedには常にフィールドの値が設定されるようにバインドされます。checkedにバインドされた値が変更されたとき、ラジオボタンのバインドされた値にマッチするすべてのフィールドがチェックされた状態になります。 checked.  メモ: ラジオボタンに対しては、この振る舞いがもっとも利便性が高いと考えています。
+ラジオボタンがチェックされたとき、checked には常にフィールドの値が設定されるようにバインドされます。checked にバインドされた値が変更されたとき、ラジオボタンのバインドされた値にマッチするすべてのフィールドがチェックされた状態になります。メモ: ラジオボタンに対しては、この振る舞いがもっとも利便性が高いと考えています。
 
-## Select Boxes
+## セレクトボックス
 
-Select boxes can be bound to a value (while not technically a DOM property, this is another convient behavior Volt adds).
+セレクトボックスは値に対してバインドすることができます。(これは技術的には正しくありませんが、Volt では利便性のためにこのような振る舞いを追加しています)
 
 ```html
 <select value="{{ _rating }}">
@@ -47,5 +47,5 @@ Select boxes can be bound to a value (while not technically a DOM property, this
 </select>
 ```
 
-選択されたオプションが変更されると、それに合うように```_rating```が変更されます。```_rating```が変更された場合には、それにマッチする最初のオプションが選択された状態になります。マッチするオプションが存在しなかった場合には、セレクトボックスは未選択の状態になります。
+選択されたオプションが変更されると、それに合うように ```_rating``` が変更されます。```_rating``` が変更された場合には、それにマッチする最初のオプションが選択された状態になります。マッチするオプションが存在しなかった場合には、セレクトボックスは未選択の状態になります。
 
