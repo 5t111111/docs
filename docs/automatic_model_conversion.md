@@ -1,8 +1,10 @@
-## Automatic Model Conversion
+## 自動モデル変換
 
 ### Hash -> Model
 
-For convenience, when placing a hash inside of another model, it is automatically converted into a model.  Models are similar to hashes, but provide support for things like persistence and triggering reactive events.
+利便性のために、ある Model (モデル) の中にハッシュを入れた場合には、自動的に Model に変換されるようになっています。odel はハッシュに似ていますが、例えば永続化の機能を持っている点や、イベントをトリガできる点が異なります。
+
+
 
 ```ruby
     user = Model.new
@@ -20,13 +22,13 @@ For convenience, when placing a hash inside of another model, it is automaticall
     # => Model
 ```
 
-Models are accessed differently from hashes.  Instead of using `model[:symbol]` to access, you call a method `model.method_name`.  This provides a dynamic unified store where setters and getters can be added without changing any access code.
+Model へのアクセス方法はハッシュとは異なります。`model[:symbol]` としてアクセスするのではなく、`model.method_name` としてメソッドを呼び出します。これは統一されたデータ保存のための機構として動的に提供されるものであり、セッター/ゲッターを追加するためにコードを書く必要はありません。
 
-You can get a Ruby hash back out by calling `#to_h` on a Model.
+Model をハッシュに戻したい場合には、`#to_h` を実行してください。
 
 ### Array -> ArrayModel
 
-Arrays inside of models are automatically converted to an instance of ArrayModel.  ArrayModels behave the same as a normal Array except that they can handle things like being bound to backend data and triggering reactive events.
+Model の中のアレイは自動的に ArrayModel のインスタンスに変換されます。ArrayModel は通常のアレイと同様に振る舞いますが、バックエンドのデータにバインドしたり、リアクティブなイベントを発生させたりできる点が異なります。
 
 ```ruby
     model = Model.new
@@ -40,7 +42,7 @@ Arrays inside of models are automatically converted to an instance of ArrayModel
 ```
 
 
-To convert a Model or an ArrayModel back to a normal hash, call .to_h or .to_a respectively.  To convert them to a JavaScript Object (for passing to some JavaScript code), call `#to_n` (to native).
+Model や ArrayModel を通常のハッシュに戻したい場合には、それぞれ .to_h と .to_a を実行してください。(JavaScript のコードに渡すために) JavaScript のオブジェクトに変換したい場合には、`#to_n` (to native) を実行してください。
 
 ```ruby
     user = Model.new
@@ -60,4 +62,4 @@ To convert a Model or an ArrayModel back to a normal hash, call .to_h or .to_a r
     # => [1,2,3,4]
 ```
 
-You can get a normal array again by calling .to_a on an ArrayModel.
+ArrayModel に対して .to_a を実行することで通常の配列を得ることができます。

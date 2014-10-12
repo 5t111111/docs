@@ -1,6 +1,6 @@
-## ArrayModel Events
+## ArrayModel イベント
 
-Models trigger events when their data is updated.  Currently, models emit two events: added and removed.  For example:
+モデルはデータが更新されたときにイベントをトリガーします。現在、モデルは added と removed の2つのイベントを発生させます。例:
 
 ```ruby
     model = Model.new
