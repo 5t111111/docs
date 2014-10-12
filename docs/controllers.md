@@ -1,8 +1,8 @@
-# Controllers
+# コントローラー
 
-A controller can be any class in Volt, however it is common to have that class inherit from ModelController.  A model controller lets you specify a model that the controller works off of.  This is a common pattern in Volt.  The model for a controller can be assigned by one of the following:
+Volt では、コントローラーがどのクラスであっても構いませんが、通常は ModelController を継承したクラスとします。そのモデルコントローラーを使うことで、コントローラーによって利用されるモデルが明確になります。これは Volt で一般的に使われるパターンです。コントローラーが利用するモデルを設定するには以下のいずれかの方法を使います。
 
-1. A symbol representing the name of a provided collection model:
+1. コレクションモデルの名前を示すシンボル:
 
 ```ruby
     class TodosController < ModelController
@@ -12,7 +12,7 @@ A controller can be any class in Volt, however it is common to have that class i
     end
 ```
 
-2. Calling `self.model=` in a method:
+2. メソッド内での `self.model=` の呼び出し:
 
 ```ruby
     class TodosController < ModelController
@@ -22,19 +22,19 @@ A controller can be any class in Volt, however it is common to have that class i
     end
 ```
 
-When a model is set, any missing methods will be proxied to the model.  This lets you bind within the views without prefixing the model object every time.  It also lets you change out the current model and have the views update automatically.
+モデルが設定されると、存在しないメソッドの呼び出しはすべてそのモデルに対してプロキシされます。これによって、ビューの中でバインディングを行う際に、毎回モデルのオブジェクトを指定しなくても済むようになっています。また、現在設定されているモデルから変更したときにビューが自動的に更新されるのも、この仕組みがあるためです。
 
-In methods, the `#model` method returns the current model.
+メソッド内で `#model` を実行したときの戻り値は現在設定されているモデルとなります。
 
-See the [provided collections](#provided-collections) section for a list of the available collection models.
+[提供するコレクション](#提供するコレクション) の節に、利用可能なコレクションモデルのリストが記載されています。
 
-You can also provide your own object to model.
+また、自分で作成したオブジェクトをモデルとして提供することも可能です。
 
-In the example above, any methods not defined on the TodosController will fall through to the provided model.  All views in views/{controller_name} will have this controller as the target for any Ruby run in their bindings.  This means that calls on self (implicit or with self.) will have the model as their target (after calling through the controller).  This lets you add methods to the controller to control how the model is handled, or provide extra methods to the views.
+上記した例において、TodosController に定義されていないメソッドは、設定されているモデルにそのまま送られます。views/{コントローラー名} のすべてのビューにおいて、そのバインディングの中にある Ruby コードを実行する対象はこのコントローラーとなります。このことは、self に対する呼び出しは (それが暗黙であっても、self をつけて明示したものであっても)、(コントローラーを経由して) モデルを対象とすることを意味しています。このことによって、モデルの扱いに関するメソッドをコントローラーに追加したり、ビューに対して追加のメソッドを提供することが可能になっています。
 
-Volt is more similar to an MVVM architecture than an MVC architecture.  Instead of the controllers passing data off to the views, the controllers are the context for the views.  When using a ModelController, the controller automatically forwards all methods it does not handle to the model.  This is convenient since you can set a model in the controller and then access its properties directly with methods in bindings.  This lets you do something like ```{{ _name }}``` instead of something like ```{{ @model._name }}```
+Volt は MVC アーキテクチャよりも MVVM アーキテクチャに近いものです。そこでのコントローラーとは、ビューへのデータの受け渡しを行うものではなく、ビューのコンテキストを表すものだと言えます。ModelController を使うと、コントローラーは自分の扱うことのできないメソッドを自動的にモデルに引き継ぎます。このことは利便性を高めてくれます。なぜなら、コントローラーにモデルをセットし、バインディングのメソッドから直接そのプロパティにアクセスすることが可能であるからです。例えば、```{{ @model._name }}``` と書くのではなく、```{{ _name }}``` とすることができます。
 
-Controllers in the app/home component do not need to be namespaced, all other components should namespace controllers like so:
+app/home コンポーネントに配置されたコントローラーに対しては名前空間を指定する必要がありませんが、それ以外のコンポーネントでは、以下のようにコントローラーに名前空間を設定する必要があります:
 
 ```ruby
     module Auth
@@ -44,4 +44,4 @@ Controllers in the app/home component do not need to be namespaced, all other co
     end
 ```
 
-Here "auth" would be the component name.
+この例では、「auth」がコンポーネント名となります。

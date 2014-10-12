@@ -1,6 +1,6 @@
-## Reactive Accessors
+## リアクティブ アクセサ
 
-The default ModelController proxies any missing methods to its model.  Sometimes you need to store additional data reactively in the controller outside of the model.  (Though often you may want to condier doing another control/controller).  In this case, you can add a ```reactive_accessor```.  These behave just like ```attr_accessor``` except the values assigned and returned are tracked for any Computations.
+デフォルトの ModelController は、自分に見つからないメソッドをそのモデルにプロキシします。時には、追加のデータをリアクティブな状態で、かつコントローラーに保持させて、モデルの外側に持っておく必要があります。(普通であれば、別のコントロールかコントロールを検討するかもしれませんが)。この場合には、```reactive_accessor``` を追加することができます。それらは ```attr_accessor``` と同様の振る舞いをします。ただし、追跡して評価されるので、代入される値と戻り値はその評価された結果となります。
 
 ```ruby
   class Contacts < ModelController
