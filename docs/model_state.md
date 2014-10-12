@@ -1,4 +1,4 @@
-## Model State
+## モデルの状態
 
 **Work in progress**
 

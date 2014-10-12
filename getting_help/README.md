@@ -1,8 +1,8 @@
-# Getting Help
+# ヘルプ
 
-Volt is still a work in progress, but early feedback is appreciated.  Use the following to communicate with the developers, someone will get back to you very quickly:
+Voltはまだ開発中ですが、早期のフィードバックは大歓迎です。開発者とコンタクトを取りたいときには、以下を使ってください。誰かが素早く返答してくれることでしょう。
 
-- **If you need help**: post on [stackoverflow.com](http://www.stackoverflow.com). Be sure to tag your question with `voltrb`.
-- **If you found a bug**: post on [github issues](https://github.com/voltrb/volt/issues)
-- **If you have an idea or need a feature**: post on [github issues](https://github.com/voltrb/volt/issues)
-- **If you want to discuss Volt**: [chat on gitter](https://gitter.im/voltrb/volt), someone from the volt team is usually online and happy to help with anything.
+
+- **ヘルプが欲しい！**: [stackoverflow.com](http://www.stackoverflow.com) に投稿してください。質問に`voltrb`タグを付けるのを忘れないように。- **バグを見つけたとき**: [github issues](https://github.com/voltrb/volt/issues) に投稿してください。
+- **Voltへの提案がある、こんな機能が欲しい**: [github issues](https://github.com/voltrb/volt/issues) に投稿してください。
+- **Voltについて議論したい**: [gitterのチャット](https://gitter.im/voltrb/volt) 通常、Voltチームが誰かがオンラインです。喜んで助けになります。

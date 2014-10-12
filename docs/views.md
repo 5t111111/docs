@@ -1,14 +1,14 @@
-# Views
+# ビュー
 
-Views in Volt use a templating language similar to handlebars. They can be broken up into sections. A section header looks like the following:
+Voltでは、ビューにHandlebarsに似たテンプレート言語を使用します。ビューはセクションに分割することができます。例えば、セクションヘッダーは以下のようになります。
 
 ```html
 <:Body>
 ```
 
-Section headers should start with a capital letter so as not to be confused with [controls](#controls).  Section headers do not use closing tags.  If no section header is provided, the Body section is assumed.
+セクションヘッダーは先頭が大文字で始まる必要があります。[コントロール](#コントロール)と混同しないようにしてください。また、セクションヘッダーに閉じタグは使いません。If no section header is provided, the Body section is assumed.
 
-Sections help you split up different parts of the same content (title and body usually), but within the same file.
+セクションは同じファイル上のコンテンツの異なるパーツ(タイトルと本文など)を区別するのに役立ちます。
 
 # Bindings
 

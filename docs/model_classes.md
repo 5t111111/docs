@@ -1,24 +1,24 @@
-## Model Classes
+## Modelクラス
 
-By default all collections use the Model class by default.
+デフォルトでは、すべてのコレクションはModelクラスを使用します。
 
 ```ruby
     page._info.class
     # => Model
 ```
 
-You can provide classes that will be loaded in place of the standard model class.  You can place these in any app/{component}/models folder.  For example, you could add ```app/main/info.rb```  Model classes should inherit from ```Model```
+標準のModelクラスの代わりに使用するクラスを提供し、それを読み込むことも可能です。クラスは /app/{component}/models フォルダに格納します。例えば、```app/main/info.rb``` という具合です。モデルとするクラスは```Model```を継承する必要があります。
 
 ```ruby
     class Info < Model
     end
 ```
 
-Now when you access any sub-collection called ```_info```, it will load as an instance of ```Info```
+これで、```_info```というサブコレクションにアクセスすることができます。それは```Info```のインスタンスとして読み込まれます。
 
 ```ruby
     page._info.class
     # => Info
 ```
 
-This lets you set custom methods and validations within collections.
+これによって、コレクションにカスタムメソッドやバリデーションを設定することが可能です。

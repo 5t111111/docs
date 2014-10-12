@@ -1,21 +1,21 @@
-# Goals
+# Volt の目指すもの
 
-Volt has the following goals:
+以下を達成することが Volt の目標です。
 
-1. Developer happiness
-2. Share code between client and server
-3. Automatic data syncing between client and server
-4. Apps are built as nested components.  Components can be shared (via gems)
-5. Concurrent.  Volt provides tools to simplify concurrency.  Component rendering is done in parallel on the server
-6. Intelligent asset management
-7. Secure (shouldn't need to be said, but it does)
-8. Be fast/light
-9. Understandable code base
-10. Control upgradeability
+1. 開発者のしあわせ
+2. クライアントとサーバー間のコードの共有
+3. クライアントとサーバー間の自動的なデータ同期
+4. 階層的なコンポーネントで構築されたアプリケーション。コンポーネントは(Gemを介して)共有可能。
+5. 並行性。Voltは、シンプルに並行性を実現するツールを提供する。コンポーネントのレンダリングは、サーバー上で並列実行される。
+6. インテリジェントなアセット管理
+7. セキュアであること（わざわざ言うべきことではないですが）
+8. 高速/軽量
+9. 理解しやすいコードベース
+10. アップグレードをコントロール可能であること
 
-# Road Map
+# ロードマップ
 
-Many of the core Volt features are implemented.  We still have a bit to go before 1.0, most of it involving models.
+Voltの核となる機能の多くはすでに実装済みです。 しかし、1.0のリリースまでに対応すべきことがまだいくつか残っていて、そのほとんどはモデルに関するものです。
 
-1. Model read/write permissions
-2. User accounts, user collection, signup/login templates
+1. モデルのread/write権限
+2. ユーザーアカウント、ユーザーコレクション、サインアップ/ログインのテンプレート

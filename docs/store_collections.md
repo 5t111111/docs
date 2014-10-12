@@ -1,8 +1,8 @@
-## Store Collection
+## ストアコレクション
 
-The store collection backs data in the data store.  Currently the only supported data store is Mongo. (More coming soon, RethinkDb will probably be next)  You can use store very similar to the other collections.
+ストアコレクションは、データストアにデータを保存するためのものです。現在サポートされているデータストアはMongoのみです。(他のものも検討中です。おそらく次はRethinkDBに対応するでしょう) ストアは他のコレクションとほとんど同じように利用することができます。
 
-In Volt you can access ```store``` on the front-end and the back-end.  Data will automatically be synced between the front-end and the backend.  Any changes to the data in store will be reflected on any clients using the data (unless a [buffer](#buffers) is in use - see below).
+Voltではフロントエンドとバックエンドのどちらも```store```にアクセスすることができます。そして、フロントエンドとバックエンドでデータが自動的に同期されます。Any changes to the data in store will be reflected on any clients using the data (unless a [buffer](#buffers) is in use - see below).
 
 ```ruby
     store._items << {_name: 'Item 1'}
@@ -11,13 +11,13 @@ In Volt you can access ```store``` on the front-end and the back-end.  Data will
     # => <Model:70303681865560 {:_name=>"Item 1", :_id=>"e6029396916ed3a4fde84605"}>
 ```
 
-Inserting into ```store._items``` will create a ```_items``` table and insert the model into it.  An pseudo-unique _id will be automatically generated.
+```sore_items```へ挿入を行うと、```_items```テーブルが作成され、そこにモデルが格納されます。そのとき、仮の一意な _id が自動的に生成されます。
 
-Currently one difference between ```store``` and other collections is ```store``` does not store properties directly.  Only ArrayModels are allowed directly on ```store```
+現在、```store```とそれ以外のコレクションで異なっている点は、```store```はプロパティを直接持つことができないことです。```store```に直接設定することができるのはArrayModelのみです。
 
 ```ruby
     store._something = 'yes'
     # => won't be saved at the moment
 ```
 
-Note: We're planning to add support for direct ```store``` properties.
+メモ: ```store```に直接プロパティを設定できるようにすることも検討中です。

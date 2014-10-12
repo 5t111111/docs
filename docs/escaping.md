@@ -1,6 +1,7 @@
-## Escaping
+## エスケープ
 
-When you need to use {{ and }} outside of bindings, anything in a triple mustache will be escaped and not processed as a binding:
+{{ と }) をバインディングの目的以外で使いたい場合には、3連の波括弧で囲んだ中にあるものはエスケープされバインディングとして処理されることはありません。
+
 
 ```html
     {{{ bindings look like: {{this}}  }}}

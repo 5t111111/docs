@@ -1,6 +1,6 @@
-## Nil Models
+## Nilモデル
 
-As a convience, calling something like ```page._info``` returns what's called a NilModel (assuming it isn't already initialized).  NilModels are place holders for future possible Models.  NilModels allow us to bind deeply nested values without initializing any intermediate values.
+利便性を高めるために、例えば```page._info```を実行した時にはNilModelを返すようになっています。(このとき、._infoはまだ設定されていないものとします。)NilModelは将来的に利用するモデルのプレースホルダーです。NilModelがあることによって、わざわざ中間の値を初期化することなく、深くネストされた値のバインドをすることが可能になっています。
 
 ```ruby
 page._info
@@ -13,22 +13,22 @@ page._info._name = 'Ryan'
 # => <Model:70161625994820 {:_info=><Model:70161633901800 {:_name=>"Ryan"}>}>
 ```
 
-One gotchya with NilModels is that they are a truthy value (since only nil and false are falsy in ruby).  To make things easier, calling ```.nil?``` on a NilModel will return true.
+1つ注意しておくべきことは、NilModelは「真」の値であるということです。(Rubyではnilとfalseのみがfalseとして扱われます。)分かりやすくするために、NilModelに対して```.nil?```を実行するとtrueを返すようになっています。
 
-One common place we use a truthy check is in setting up default values with || (logical or)  Volt provides a convenient method that does the same thing `#or`, but works with NilModels.
+真偽チェックを利用するよくあるケースとして、|| (論理和)を使ってデフォルト値を設定するものがあります。Voltはこれと同様の働きをするメソッド #or を提供します。これはNilModelに対しても有効です。
 
-Instead of
+こう書くのではなく、
 
 ```ruby
     a || b
 ```
 
-Simply use:
+こう書きます。
 
 ```ruby
     a.or(b)
 ```
 
-`#and` works the same way as &&.  #and and #or let you easily deal with default values involving NilModels.
+#and は && と同様の働きをします。#and と #or によって、NilModelも含めて、初期値の扱いを簡単にすることができます。
 
 -- TODO: Document .true? / .false?

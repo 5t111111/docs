@@ -2,7 +2,7 @@
 
 # Tutorial
 
-This guide will take you through creating a basic web application in Volt.  This tutorial assumes a basic knowledge of Ruby and web development.
+ここでは、Voltで基本的なWebアプリケーションを作成する手順を示します。 このチュートリアルは、RubyとWeb開発の基本的な知識を持っていることを前提とします。
 
 ## Setup
 

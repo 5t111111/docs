@@ -10,7 +10,7 @@ For iteration over objects, you can use ```.each```
 
 Above, if ```_items``` is an array, the block will be rendered for each item in the array, setting ```item``` to the value of the array element.
 
-You can also access the position of the item in the array with the #index method.
+#index メソッドを使うことで、配列の各要素の位置を得ることもできます。
 
 ```html
 {{ each _items do |item| }}

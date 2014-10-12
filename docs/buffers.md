@@ -1,6 +1,6 @@
-## Buffers
+## バッファ
 
-Because the store collection is automatically synced to the backend, any change to a model's property will result in all other clients seeing the change immediately.  Often this is not the desired behavior.  To facilitate building [CRUD](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete) apps, Volt provides the concept of a "buffer".  A buffer can be created from one model and will not save data back to its backing model until .save! is called on it.  This lets you create a form thats not saved until a submit button is pressed.
+ストアコレクションは自動的にバックエンドと同期するため、モデルのプロパティに対する更新は即座に他のクライアントにも反映されます。しかし、この動作が望ましくない場合もあります。[CRUD](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete)アプリケーションの構築を容易にするため、Voltは"バッファ"という方法を的供します。バッファはモデルに対して作成することが可能で、save!を実行するまではバックエンドのモデルに反映されることはありません。これを利用することで、submitボタンが押されるまでは保存されないフォームを作成することが可能になります。
 
 ```ruby
     store._items << {_name: 'Item 1'}
@@ -25,7 +25,7 @@ Because the store collection is automatically synced to the backend, any change 
     # => 'Updated Item 1'
 ```
 
-```#save!``` on buffer also returns a [promise](http://opalrb.org/blog/2014/05/07/promises-in-opal/) that will resolve when the data has been saved back to the server.
+なお、バッファに対して```#save!```を実行したときの戻り値は[promise](http://opalrb.org/blog/2014/05/07/promises-in-opal/)です。promiseはデータがサーバーに保存された時点で解決(resolve)されます。
 
 ```ruby
     item1_buffer.save!.then do
@@ -35,4 +35,4 @@ Because the store collection is automatically synced to the backend, any change 
     end
 ```
 
-Calling .buffer on an existing model will return a buffer for that model instance.  If you call .buffer on an ArrayModel (plural sub-collection), you will get a buffer for a new item in that collection.  Calling .save! will then add the item to that sub-collection as if you had done << to push the item into the collection.
+既存のモデルに対して .buffer を実行した場合の戻り値は、そのモデルのインスタンスのバッファになります。また、ArrayModel(複数形のサブコレクション)に対して .buffer を実行した場合には、そのコレクションの新しい要素のバッファを取得します。save! を実行すると、<< で要素をコレクションにプッシュするかのように、その要素をサブコレクションに追加することができます。

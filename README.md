@@ -1,17 +1,16 @@
-# Introduction
+# Voltとは
 
-Volt is a Ruby web framework where your ruby code runs on both the server and the client (via [opal](https://github.com/opal/opal)).  The DOM automatically updates as the user interacts with the page. Page state can be stored in the URL. If the user hits a URL directly, the HTML will first be rendered on the server for faster load times and easier indexing by search engines.
+Volt は Ruby の Web フレームワークで、サーバーサイドとクライアントサイドの両方のコードを Ruby で記述できることが特徴です(クライアント側では [opal](https://github.com/opal/opal) を利用します)。Volt では、ユーザーがページに対して行った操作に応じて自動的に DOM が更新されます。また、ページの状態を URL として保持することができます。ユーザーが URL に直接アクセスした場合、HTML はまずサーバー上でレンダリングされます。これはロード時間の高速化や、検索エンジンによるインデックス化を容易にするためです。
 
-Instead of syncing data between the client and server via HTTP, Volt uses a persistent connection between the client and server. When data is updated on one client, it is updated in the database and any other listening clients (with almost no setup code needed).
+Volt では、HTTP を介してクライアントとサーバー間のデータを同期するのではなく、クライアントとサーバー間の永続的なコネクションを利用します。したがって、ある1つのクライアント上でデータが更新されたときには、データベース、および他のリスニング中のクライアント上でも更新が行われます。(しかも、そのための設定用コードを書く必要はほとんどありません。)
 
-Pages HTML is written in a template language where you can put ruby between ```{{``` and ```}}```.  Volt uses data flow/reactive programming to automatically and intelligently propagate changes to the DOM (or any other code wanting to know when a value updates).  When something in the DOM changes, Volt intelligently updates only the nodes that need to be changed.
+ページの HTML はテンプレート言語で記述し、```{{``` と ```}}``` で括って Ruby のコードを直接書くことができます。Volt は、DOM (および値が更新されたことを検知したい他のすべてのコード)に対して、自動的に、かつ正確に変更を伝えるために、データフロー／リアクティブプログラミングを利用します。 DOM に何らかの変更があった場合に、Volt は変更が必要なノードだけを正しく更新することができます。
 
-See some demo videos here:
-** Note: These videos are outdated, new videos coming tomorrow.
- - [Volt Todos Example](https://www.youtube.com/watch?v=6ZIvs0oKnYs)
- - [Build a Blog with Volt](https://www.youtube.com/watch?v=c478sMlhx1o)
- - [Reactive Values in Volt](https://www.youtube.com/watch?v=yZIQ-2irY-Q)
+いくつかのデモ動画を用意しています。
+** 注意: これらのビデオは古いものです。近日中に新しいビデオを公開する予定です。 - [Volt での Todoアプリケーション の例](https://www.youtube.com/watch?v=6ZIvs0oKnYs)
+ - [Volt でブログを構築する](https://www.youtube.com/watch?v=c478sMlhx1o)
+ - [Volt のリアクティブバリューについて](https://www.youtube.com/watch?v=yZIQ-2irY-Q)
 
-Check out demo apps:
+デモアプリケーションも用意しています。
  - https://github.com/voltrb/todos3
  - https://github.com/voltrb/contactsdemo

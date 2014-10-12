@@ -1,8 +1,8 @@
-# Models
+# モデル
 
-Volt's concept of a model is slightly different from many frameworks where a model is the name for the ORM to the database.  In Volt a model is a class where you can store data easily.  Models can be created with a "Persistor", which is responsible for storing the data in the model somewhere.  Models created without a persistor, simply store the data in the classes instance.  Lets first see how to use a model.
+多くのフレームワークでは、モデルというのはデータベースとのORMにおいて使われる単語ですが、Voltのモデルのコンセプトはそれとは少し異なります。Voltにおいて、モデルはデータを簡単に保存しておくために利用できるクラスを指します。モデルは、Persistorとともに作成することができます。そのPersistorというものが、モデルのデータを保持しておく役割を果たします。Persistor無しでモデルを作った場合には、データは単純にクラスのインスタンスに保存されます。どのようにモデルを使うのか、まず見てみましょう。
 
-Volt comes with many built-in models; one is called `page`.  If you call `#page` on a controller, you will get access to the model.
+Voltには多くのモデルがビルトインされており、その1つに `page` モデルがあります。コントローラーで `#page` を呼び出すことでそのモデルにアクセスすることができます。
 
 ```ruby
 page._name = 'Ryan'
@@ -10,11 +10,11 @@ page._name
 # => 'Ryan'
 ```
 
-Models act like a hash that you can access with getters and setters that start with an underscore.  If an attribute is accessed that hasn't yet been assigned, you will get back a "nil model".  Prefixing with an underscore makes sure we don't accidentally try to call a method that doesn't exist and get back nil model instead of raising an exception. Fields behave similarly to a hash, but with a different access and assignment syntax.
+モデルは、先頭がアンダースコアで始まるゲッター/セッターでアクセス可能なハッシュのように振る舞います。もし、そのアトリビュートまだ設定されていないものだった場合には、"nilモデル"が返ってきます。アンダースコアを前置することによって、存在しないメソッドを誤って呼び出すことを回避したり、例外が発生することを避けnilモデルを返すようにすることができます。フィールドはハッシュのように振る舞いますが、アクセスと代入については異なるシンタックスを使用します。
 
 -- # TODO: Add docs on fields in classes
 
-Models also let you nest data without creating the intermediate models:
+また、モデルは中間的なモデルを作成することなくネストすることができます。
 
 ```ruby
 page._settings._color = 'blue'
@@ -25,9 +25,9 @@ page._settings
 # => @#<Model:_settings {:_color=>"blue"}>
 ```
 
-Nested data is automatically setup when assigned.  In this case, page._settings is a model that is part of the page model.  This allows nested models to be bound to a binding without the need to setup the model before use.
+ネストされたデータは、代入時に自動的に設定されます。上記の例では、page._settingはpageモデルの一部を形成するモデルとなります。このことによって、事前に設定を行うことなく、ネストされたモデルをバインディングすることが可能になっています。
 
-In Volt models, plural properties return an ArrayModel instance.  ArrayModels behave the same way as normal arrays.  You can add/remove items to the array with normal array methods (#<<, push, append, delete, delete_at, etc...)
+Voltのモデルでは、複数形の名前を持ったプロパティはArrayModelsのインスタンスを返します。ArrayModelは通常のアレイと同じように振る舞います。要素の追加/削除は通常のアレイと同様のメソッド (#<<, push, append, delete, delete_at, etc...) で行うことができます。
 
 ```ruby
 page._items
