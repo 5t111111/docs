@@ -26,7 +26,7 @@
        * [自動モデル変換](docs/automatic_model_conversion.md)
    * [コントローラー](docs/controllers.md)
        * [リアクティブ アクセサ](docs/reactive_accessors.md)
-   * [Tasks](docs/tasks.md)
+   * [タスク](docs/tasks.md)
    * [Components](docs/components.md)
        * [Dependencies](docs/dependencies.md)
        * [Assets](docs/assets.md)
