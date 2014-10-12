@@ -3,34 +3,33 @@
 ユーザーがウェブページで操作をしたときの処理は、以下が典型的なものでしょう。
 
 1. アプリケーションの状態を変える
-2. DOMを更新する
+2. DOM を更新する
 
-例えば、ユーザーが「新しいtodoアイテムをtodoリストに追加」するためにクリックしたときの処理は、「todoアイテムを表すオブジェクトを作成し、そのアイテムをリストのDOMに追加する」といったものになると思います。  その際、オブジェクトとDOMの状態が確実に同期しておくようにするためには、多くの手間のかかる処理が必要です。
+例えば、ユーザーが「新しい todo アイテムを todo リストに追加」するためにクリックしたときの処理は、「todo アイテムを表すオブジェクトを作成し、そのアイテムをリストの DOM に追加する」といったものになると思います。その際、オブジェクトと DOM の状態が確実に同期しておくようにするためには、多くの手間のかかる処理が必要です。
 
-The idea of "reactive programming" can be used to simplify maintaining the DOM.  Instead of having event handlers that manage a model and manage the DOM, we have event handlers that update reactive data models.  We describe our DOM layer in a declarative way so that it automatically knows how to render what's in our our data models.
+「リアクティブプログラミング」という手法は、DOM の管理をシンプルにするために使われます。この手法では、モデルとDOM を管理するイベントハンドラを持つ代わりに、リアクティブなデータモデルを管理するイベントハンドラを持ちます。DOM のレイヤーを宣言型で記述することで、データモデルの内容をどのようにレンダリングすべきかを自動的に判断することができます。
 
-## 状態と評価について
+## 状態と評価
 
-Webアプリケーションの中心的な仕事は状態を管理することです。多くのイベントが状態を変更します。例えば、フォーム要素へテキストを入力する、ボタンをクリックする、リンク、スクロール...などなど。これらの操作はすべてアプリケーションの状態を変更するものです。かつては、ページに対するイベントは、ページが持っている状態をそれぞれ手動で変更していました。
+Web アプリケーションの中心的な仕事は状態を管理することです。多くのイベントが状態を変更します。例えば、フォーム要素へテキストを入力する、ボタンをクリックする、リンク、スクロール...などなど。これらの操作はすべてアプリケーションの状態を変更するものです。かつては、ページに対するイベントは、ページが持っている状態をそれぞれ手動で変更していました。
 
-Voltでは、アプリケーションの状態管理をシンプルにするため、すべてのアプリケーションの状態を永続化されるモデルの中に保存します。保存のしかたはオプションで様々なものを指定可能です。
-このようにアプリケーションの状態を一元管理することで、ページを更新するために本来必要となるはずの複雑なコードを、かなりの分量削減することができます。また、このことでページのHTMLを宣言的に組み立てることができます。ページのモデルへの結びつきは、関数とメソッド呼び出しによってバインドされます。
+Volt では、アプリケーションの状態管理をシンプルにするため、すべてのアプリケーションの状態を永続化されるモデルの中に保存します。保存のしかたはオプションで様々なものを指定可能です。
+このようにアプリケーションの状態を一元管理することで、ページを更新するために本来必要となるはずの複雑なコードを、かなりの分量削減することができます。また、このことでページの HTML を宣言型で組み立てることができます。ページのモデルへの結びつきは、関数とメソッド呼び出しによってバインドされます。
 
-モデルのデータが変更されたときには、それに応じて自動的にDOMを更新したいと考えることでしょう。To make this happen, Volt lets you "watch" any method/proc for updates.
+モデルのデータが変更されたときには、それに応じて自動的に DOM を更新したいと考えることでしょう。それを可能にするために、Volt はメソッドや Proc を「監視 (watch)」し更新を行うことができます。
 
-## Computations
+## 評価
 
-実例を見てみましょう。ここでは、```page```コレクションを例とします。(後でより多くのコレクションを紹介します)
+実例を見てみましょう。ここでは、```page``` コレクションを例とします。(後でより多くのコレクションを紹介します)
 
-はじめに、評価のための監視設定を行います。計算はProcオブジェクトに対して .watch! を実行ことで設定されます。Ruby 1.9のProcの短縮シンタックス ```-> { .. }``` を使ったProcオブジェクトで .watch! を実行しています。これを一度実行すると、以後 page._name が変更されたときに毎回Procが実行されます。
-```ruby
+はじめに、評価のための監視設定を行います。計算はProcオブジェクトに対して .watch! を実行ことで設定されます。Ruby 1.9 の Proc の短縮シンタックス ```-> { .. }``` を使った Proc オブジェクトに対して .watch! を実行しています。これを一度実行すると、以後 page._name が変更されたときに毎回Procが実行されます。```ruby
 page._name = 'Ryan'
 -> { puts page._name }.watch!# => Ryan
 page._name = 'Jimmy'
 # => Jimmy
 ```
 
-Each time ```page._name``` is assigned to a new value, the computation is run again.  また、前回の実行でアクセスされたデータのいずれかに変更があったときには、再評価が実行されます。これによって、メソッドを介してデータにアクセスしながらデータの監視を続けることができます。
+```page._name``` に新しい値が代入されると再評価が実行されます。また、前回の実行でアクセスされたデータのいずれかに変更があったときにも再評価されます。これによって、メソッドを介してデータにアクセスしながらデータの監視を続けることができます。
 
 ```ruby
 page._first = 'Ryan'
@@ -51,7 +50,7 @@ page._last = 'Jones'
 # => Jimmy Jones
 ```
 
-When you call ```.watch!``` the return value is a Computation object.  In the event you no longer want to receive updates, you can call ```.stop``` on the computation.
+```.watch!``` を実行すると、その戻り値として返ってくるのは Computation (評価) オブジェクトです。もうこれ以上更新を知らせる必要がない場合には、 Computation オブジェクトに対して ```.stop``` メソッドを実行してください。
 
 ```ruby
 page._name = 'Ryan'
@@ -67,8 +66,8 @@ page._name = 'Jo'
 # (nothing)
 ```
 
-## Dependencies
+## 依存関係
 
 TODO: Explain Dependencies
 
-As a Volt user, you rarely need to use Comptuations and Dependencies directly.  Instead you usually just interact with models and bindings.  Computations are used under the hood, and having a full understanding of what's going on is useful, but not required.
+Volt を利用するにあたって、評価 (Computation) や依存関係 (Dependency) を直接扱う必要はほとんどありません。その代わりに、通常はモデルやバインディングに対して操作を行います。評価 (Computation) は見えないところで動いているものなので、それがどのような仕組みで動いているかについて完全に理解することは役に立つことですが、必ずしも必須ではありません。

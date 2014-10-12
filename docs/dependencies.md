@@ -1,4 +1,4 @@
-## Dependencies
+## 依存関係
 
 You can also use controls (see below) from one component in another.  To do this, you must require the component from the component you wish to use them in.  This can be done in the ```config/dependencies.rb``` file.  Just put
 

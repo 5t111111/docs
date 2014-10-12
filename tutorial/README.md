@@ -1,26 +1,26 @@
 # -- WORK IN PROGRESS --
 
-# Tutorial
+# チュートリアル
 
-ここでは、Voltで基本的なWebアプリケーションを作成する手順を示します。 このチュートリアルは、RubyとWeb開発の基本的な知識を持っていることを前提とします。
+ここでは、Volt で基本的な Web アプリケーションを作成する手順を示します。 このチュートリアルは、Ruby と Web 開発の基本的な知識を持っていることを前提とします。
 
-## Setup
+## セットアップ
 
-First, lets install Volt and create an empty app.  Be sure you have ruby (>2.1.0) and rubygems installed.
+最初に、Volt をインストールして空のアプリケーションを作成しましょう。Ruby (>2.1.0) と rubygems がインストールされていることを確認してください。
 
-Next install the volt gem:
+次に、Volt の gem をインストールします:
 
     gem install volt
 
-Using the volt gem, we can create a new project:
+Volt の gem を使って新しいプロジェクトを作成します:
 
     volt new sample_project
 
-This will setup a basic project in the sample_project folder.  We can ```cd``` into the folder and run the server:
+これで sample_project フォルダーに基本的なプロジェクトがセットアップされます。```cd``` コマンドでそのフォルダーに移動し、サーバーを起動します:
 
     bundle exec volt server
 
-Lastly, we can access the Volt console with:
+Voltのコンソールには以下でアクセスすることができます:
 
     bundle exec volt console
 

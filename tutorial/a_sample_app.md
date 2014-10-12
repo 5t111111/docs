@@ -1,6 +1,6 @@
-# A Sample App
+# サンプルアプリケーション
 
-Sometimes easiest way to learn a new piece of technology is to start building.  Our first example project will be a simple todo app like the ones on [todomvc.com](http://todomvc.com/)  Our app will have many simple features:
+新しい技術を学ぶときには、実際に作ってみることが一番の近道であることがあります。ここで最初に例とするプロジェクトは、[todomvc.com](http://todomvc.com/) にあるようなシンプルな todo アプリケーションです。このアプリケーションには、沢山のシンプルな機能を持たせます。
 
 --TODO: Add screenshot --
 

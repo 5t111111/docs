@@ -1,11 +1,11 @@
 # Summary
 
-* [Introduction](README.md)
-* [Goals](introduction/README.md)
-* [Tutorial](tutorial/README.md)
-   * [A Sample App](tutorial/a_sample_app.md)
-* [Docs](docs/README.md)
-   * [Rendering](docs/rendering.md)
+* [はじめに](README.md)
+* [目的](introduction/README.md)
+* [チュートリアル](tutorial/README.md)
+   * [サンプルアプリケーション](tutorial/a_sample_app.md)
+* [ドキュメント](docs/README.md)
+   * [レンダリング](docs/rendering.md)
    * [Views](docs/views.md)
        * [Content Binding](docs/content_binding.md)
        * [If Binding](docs/if_binding.md)

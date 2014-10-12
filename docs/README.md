@@ -1,4 +1,4 @@
-# Volt Documentation
+# Volt のドキュメント
 
-The following attempts to document all of the features of Volt.  While the code is always the final source of authority, we will attempt to keep these docs as up to date as possible.
+ここでは、Volt のすべての機能をドキュメント化するつもりです。最終的に機能に対しての権限を持つのはプログラムのコード自体ですが、可能な限りドキュメントを最新の状態に保つようにします。
 
