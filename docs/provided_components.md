@@ -1,23 +1,23 @@
-## Provided Components
+## 提供するコンポーネント
 
-Volt provides a few components to make web developers' lives easier.
+Volt は、Web 開発を楽に進めるためにいくつかのコンポーネントを提供しています。
 
-### Notices
+### Notices (通知)
 
-Volt automatically places ```<:volt:notices />``` into views.  This shows notices for the following:
+Volt は ```<:volt:notices />``` を自動的にビューに設定します。これによっての以下の「通知」を表示することができます:
 
-1. flash messages
-2. connection status (when a disconnect happens, lets the user know why and when a reconnect will be attempted)
-3. page reloading notices (in development)
+1. flash メッセージ
+2. 試行接続状態。(接続が切れた場合に、「なぜ接続断が発生したのか」と「再接続を試行する時間」をユーザーに通知します)。
+3. ページの再読み込み通知 (開発中)
 
-### Flash
+### Flash (フラッシュ)
 
-As part of the notices component explained above, you can append messages to any collection on the flash model.
+Flash モデルのどのコレクションに対してもメッセージを追加することができます。Flash モデルは、上記の notices (通知) コンポーネントの一部として提供されています。
 
-Each collection represents a different type of "flash".  Common examples are ```_notices, _warnings, and _errors```  Using different collections allows you to change how you want the flash displayed.  For example, you might want ```_notices``` and ```_errors``` to show with different colors.
+それぞれのコレクションが異なるタイプの「flash」を表しています。一般的なものとして ```_notices, _warnings, and _errors``` があります。そして、各コレクションはそれぞれ、flash の表示させ方を変更することができます。例えば、```_notices``` と ```_errors``` を別の色で表示させたいなどの場合が考えられます。
 
 ```ruby
     flash._notices << "message to flash"
 ```
 
-These messages will show for 5 seconds, then disappear (both from the screen and the collection).
+メッセージ5秒間表示された後に (画面からもコレクションからも) 消えます。

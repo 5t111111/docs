@@ -1,15 +1,15 @@
-## Component Generator
+## コンポーネント ジェネレーター
 
-Components can easily be shared as a gem.  Volt provides a scaffold for component gems.  In a folder (not in a volt project), simply type: volt gem {component_name}  This will create the files needed for the gem.  Note that all volt component gems will be prefixed with volt- so they can easily be found by others on github and rubygems.
+コンポーネントは gem で簡単に共有することができます。Volt は コンポーネントの gem のための scaffold を提供します。In a folder (Volt プロジェクト以外の) フォルダーの中で、volt gem {コンポーネント名} を実行すると、gem が必要とするファイル群を生成することできます。すべての Vott コンポーネントの gem の名前には volt- が付きます。これによって、github や rubygems で見つけやすくなります。
 
-While developing, you can use the component by placing the following in your Gemfile:
+開発中は、Gemfile に以下のように記載することで、そのコンポーネントを使用することができます:
 
 ```ruby
-gem 'volt-{component_name}', path: '/path/to/folder/with/component'
+gem 'volt-{コンポーネント名}', path: '/path/to/folder/with/component'
 ```
 
-Once the gem is ready, you can release it to ruby gems with:
+gem の準備が整ったら、以下のようにして ruby gems にリリースすることができます。
 
     rake release
 
-Remove the path: option in the gemfile if you wish to use the rubygems version.
+Rubygems のバージョンを利用する場合には、Gemfile の path: オプションを削除してください。

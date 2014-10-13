@@ -1,20 +1,20 @@
 ## 依存関係
 
-You can also use controls (see below) from one component in another.  To do this, you must require the component from the component you wish to use them in.  This can be done in the ```config/dependencies.rb``` file.  Just put
+別のコンポーネントからコントロール (詳しくは後述) を利用することができます。そのためには、そのコンポーネントを使用したいコンポーネント側から require しておく必要があります。これは ```config/dependencies.rb``` ファイルで指定します。単純に
 
 ```ruby
     component 'component_name'
 ```
 
-in the file.
+のようにファイルに追加してください。
 
-Dependencies act just like require in ruby, but for whole components.
+依存関係は Ruby の require と同様の働きをしますが、コンポーネント全体を対象とする点が異なります。
 
-Sometimes you may need to include an externally hosted JS file from a component.  To do this, simply do the following in the dependencies.rb file:
+外部にホストされている JS ファイルをコンポーネントからインクルードしたいことがあるかもしれません。その場合は、以下のように dependencies.rb ファイルに記載してください。
 
 ```ruby
     javascript_file 'http://code.jquery.com/jquery-2.0.3.min.js'
     css_file '//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css'
 ```
 
-Note above though that jquery and bootstrap are currently included by default.  Using javascript_file and css_file will be mixed in with your component assets at the correct locations according to the order they occur in the dependencies.rb files.
+実際には、現在のところ jquery と bootstrap はデフォルトでインクルードされるようになっています。javascript_file と css_file を使用すると、dependencies.rb ファイルに記載されている順序にしたがって、正しい場所にあるコンポーネントのアセットに mix-in されます。
