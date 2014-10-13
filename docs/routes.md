@@ -1,5 +1,5 @@
-# Routes
+# ルート
 
-Routes in Volt are very different from traditional backend frameworks.  Since data is synchronized using websockets, routes are mainly used to serialize the state of the application into the url in a pretty way.  When a page is first loaded, the URL is parsed with the routes and the params model's values are set from the URL.  Later if the params model is updated, the URL is updated based on the routes.
+Volt におけるルートは、伝統的なバックエンドのフレームワークのそれとは全く異なるものです。データは Websocket で同期されるため、ルートは主に、アプリケーションの状態をシリアライズして、分かりやすい形で URL として表現することに使用されます。ページが最初に読み込まれたとき、その URL はルートによってパースされて、パラメータのモデルの値がその URL にしたがって設定されます。後からパラメータのモデルが更新された場合には、ルートにしたがって URL が更新されます。
 
-This means that routes in Volt have to be able to go both from URL to params and params to URL.  It should also be noted that if a link is clicked and the controller/view to render the new URL is within the current component (or an included component), the page will not be reloaded, the URL will be updated with the HTML5 history API, and the params hash will reflect the new URL.  You can use the changes in params to render different views based on the URL.
+このことは、Volt におけるルートは、「URL からパラメータへ」と「パラメータから URL へ」の双方向で働くものでなければならないことを意味しています。また、リンクがクリックされたとき、新しい URL のレンダリングを行うコントローラーとビューが現在のコンポーネント内 (もしくはインクルードされているコンポートネント内) にあった場合には、そのページの読み込みが行われないことを覚えておいてください。URL は HTML5 history API を使って更新され、パラメータのハッシュはその新しい URL を反映したものになります。パラメータを変更することで、同じ URL に対して異なるビューをレンダリングすることも可能です。
