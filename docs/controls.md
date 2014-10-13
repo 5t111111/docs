@@ -1,8 +1,8 @@
-# Controls
+# コントロール
 
-Everyone wishes that we could predict the scope and required features for each part of our application, but in the real world, things we don't expect to grow large often do and things we think will be large don't end up that way.  Controls let you quickly setup reusable code/views.  The location of the controls code can be moved as it grows without changing the way controls are invoked.
+誰もが、アプリケーションの各パートごとのスコープと必要な機能を事前に定めておきたいと考えていることでしょう。しかし現実には、予想していた以上に規模が大きくなってしまったりして、思った通りに上手くいかないこともありがちです。コントロールを利用すると、再利用可能なコードやビューを簡単にセットアップすることが可能です。コントロールが大きくなってきたら、コントロールの呼び出しには変更を加えることなく、コントロールの場所を移すことができます。
 
-To render a control, simply use a tag like so:
+コントロールをレンダリングするには、以下のようにタグを使用します:
 
 ```html
     <:control-name />
@@ -14,26 +14,26 @@ or
     <:control-name></:control-name>
 ```
 
-To find the control's views and optional controller, Volt will search the following (in order):
+Volt は、コントロールのビューと追加のコントローラーを見つけるために、以下の順序で探索します:
 
 | セクション | ビューのファイル | ビューのフォルダー | コンポーネント |
 |------------|------------------|--------------------|----------------|
-| :{名称}    |                  |                    |                |
-| :body      | {名称}.html      |                    |                |
-| :body      | index.html       | {名称}             |                |
-| :body      | index.html       | index              | {名称}         |
-| :body      | index.html       | index              | gems/{名称}    |
+| :{名前}    |                  |                    |                |
+| :body      | {名前}.html      |                    |                |
+| :body      | index.html       | {名前}             |                |
+| :body      | index.html       | index              | {名前}         |
+| :body      | index.html       | index              | gems/{名前}    |
 
-**もし名称とフォルダーが一致した場合、ビューのフォルダーにあるすべてがコントローラーを読み込むことに注意してください*。*
+**もし名前とフォルダーが一致した場合には、ビューのフォルダーにあるすべてがコントローラーを読み込むことに注意してください*。*
 
 
-上記のそれぞれについての説明は以下の通りです:
+上記の各パートについて説明します:
 
 1. セクション
 ビューはセクションから構成されます。セクションは ```<:セクション名>``` で始まり、閉じタグはありません。Volt はまず同じビュー内のセクションを探します。
 
-2. views
-Next Volt will look for a view file with the control name.  もしそこで見つかれば、ビューの body セクションにレンダリングします。
+2. ビュー
+次に、Volt はコントロールの名前を持ったビューのファイルを探します。もしそこで見つかれば、ビューの body セクションにレンダリングします。
 
 3. ビューのフォルダー
 上記で見つからなければ、Volt はビューのフォルダーの中で、コントローラーの名前のファイル、もしくは index.html を探します。そして、:body セクションにレンダリングされます。もしコントローラーがビューのフォルダーに存在した場合には、そのコントローラーのインスタンスが新しく生成され、そのインスタンスでレンダリングが行われます。
@@ -44,19 +44,19 @@ Next Volt will look for a view file with the control name.  もしそこで見�
 5. gem
 最後に、「volt」で始まるすべての gem の app フォルダをチェックします。コンポーネントに対しても上記と同様にチェックされます。
 
-When you create a control, you can also specify multiple parts of the search path in the name.  The parts should be separated by a :  Example:
+また、コントロールを作成するときに、その名前に複数の探索パスを指定することもできます。各パートは : で区切る必要があります。例えば:
 
 ```html
     <:blog:comments />
 ```
 
-The above would search the following:
+上記の例の場合は以下のように探索します:
 
-| Section   | View File    | View Folder    | Component   |
-|-----------|--------------|----------------|-------------|
-| :comments | blog.html    |                |             |
-| :body     | comments.html| blog           |             |
-| :body     | index.html   | comments       | blog        |
-| :body     | index.html   | comments       | gems/blog   |
+| セクション   | ビューのファイル | ビューのフォルダー | コンポーネント |
+|--------------|------------------|--------------------|----------------|
+| :comments    | blog.html        |                    |                |
+| :body        | comments.html    | blog               |                |
+| :body        | index.html       | comments           | blog           |
+| :body        | index.html       | comments           | gems/blog      |
 
-Once the view file for the control or template is found, it will look for a matching controller.  If the control is specified as a local template, an empty ModelController will be used.  If a controller is found and loaded, a corresponding "action" method will be called on it if its exists.  Action methods default to "index" unless the component or template path has two parts, in which case the last part is the action.
+コントロールやテンプレートのためのビューのファイルが見つかれば、それにマッチするコントローラーを探します。もしコントロールがローカルのテンプレートとして指定されていれば、空の ModelController を使います。もしコントローラーが見つかって読み込まれると、それに対応する「アクション (action)」メソッドが (存在すれば) コントローラー上で実行されます。デフォルトのアクションメソッドは「index」となります。ただし、コンポーネントかテンプレートのパスが2つのパートを持っている場合には、その最後のパートがアクションとなります。

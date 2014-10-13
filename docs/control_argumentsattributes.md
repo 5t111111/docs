@@ -1,6 +1,6 @@
-# Control Arguments/Attributes
+# コントロールの引数と属性
 
-Like other html tags, controls can be passed attributes.  These are then converted into an object that is passed as the first argument to the initialize method on the controller.  The standard ModelController's initialize will then assign the object to the attrs property which can be accessed with ```#attrs```  This makes it easy to access attributes passed in.
+他の html タグと同様に、コントロールには属性を指定することができます。指定した属性はオブジェクトに変換され、コントローラーの initialize メソッドの第一引数として渡されます。標準的な ModelController の initialize は、そのオブジェクトを ```#attrs``` でアクセス可能なプロパティに代入します。これによって指定した属性へ容易にアクセスすることが可能になっています。
 
 ```html
 
@@ -16,7 +16,7 @@ Like other html tags, controls can be passed attributes.  These are then convert
   <li>{{ attrs.name }}</li>
 ```
 
-Instead of passing in individual attributes, you can also pass in a Model object with the "model" attribute and it will be set as the model for the controller.
+属性を個別に指定する代わりに、「model」属性に Model オブジェクトを指定することもできます。そのモデルはコントローラーの利用するモデルとして設定されます。
 
 ```html
 <:Body>
