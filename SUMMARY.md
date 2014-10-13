@@ -39,7 +39,7 @@
    * [チャンネル](docs/channel.md)
    * [Testing](docs/testing.md)
    * [デバッグ](docs/debugging.md)
-   * [Volt Helpers](docs/volt_helpers.md)
-* [Getting Help](getting_help/README.md)
+   * [Volt ヘルパー (Helper)](docs/volt_helpers.md)
+* [ヘルプが必要なとき](getting_help/README.md)
 * [Contributing](contributing/README.md)
 
