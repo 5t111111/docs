@@ -1,7 +1,7 @@
-# Debugging
+# デバッグ
 
-An in browser irb is in the works.  We also have source maps support, but they are currently disabled by default.  To enable them run:
+ブラウザー上で動く irb を開発中です。また、ソースマップもサポートされています。ただ、現在のところ、デフォルトでは無効になっています。有効にするためには以下を設定してください:
 
     MAPS=true volt s
 
-This feature is disabled by default because (due to the volume of pages rendered) it slows down page rendering. We're working with the opal and sprockets teams to make it so everything is still served in one big source maps file (which would show the files as they originated on disk)
+この機能を無効にしている理由は、(レンダリングされるページの量によっては) ページのレンダリングが遅くなるからです。私たちは opal と sprockets のチームと共にこの問題に対応中です。現時点では、ソースマップは巨大な1つのファイルとして扱われます。(本来であれば、ディスク上にあるものと同様のファイル群となるでしょう)。

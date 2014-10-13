@@ -38,7 +38,7 @@
        * [ルートファイル](docs/routes_file.md)
    * [チャンネル](docs/channel.md)
    * [Testing](docs/testing.md)
-   * [Debugging](docs/debugging.md)
+   * [デバッグ](docs/debugging.md)
    * [Volt Helpers](docs/volt_helpers.md)
 * [Getting Help](getting_help/README.md)
 * [Contributing](contributing/README.md)
