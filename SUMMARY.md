@@ -41,5 +41,5 @@
    * [デバッグ](docs/debugging.md)
    * [Volt ヘルパー (Helper)](docs/volt_helpers.md)
 * [ヘルプが必要なとき](getting_help/README.md)
-* [Contributing](contributing/README.md)
+* [Volt への貢献](contributing/README.md)
 

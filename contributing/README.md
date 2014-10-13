@@ -1,3 +1,3 @@
-# Contributing
+# Volt への貢献
 
-You want to contribute?  Great!  Thanks for being awesome!  At the moment, we have a big internal todo list, hop on https://gitter.im/voltrb/volt so we don't duplicate work.  Pull requests are always welcome, but asking about helping on gitter should save some duplication.
+Volt に貢献したい？それは素晴らしい！ありがとうございます！現在、私たちは内部的に非常に多くの todo タスクを持っていますので、https://gitter.im/voltrb/volt に参加してもらえると、重複した作業をせずに済みます。Pull リクエストはいつでも歓迎します。ですが、まず gitter で質問してもらえると、重複が発生するのを防ぐことができます。
