@@ -36,7 +36,7 @@
        * [コントロールの引数と属性](docs/control_argumentsattributes.md)
    * [ルート](docs/routes.md)
        * [ルートファイル](docs/routes_file.md)
-   * [Channel](docs/channel.md)
+   * [チャンネル](docs/channel.md)
    * [Testing](docs/testing.md)
    * [Debugging](docs/debugging.md)
    * [Volt Helpers](docs/volt_helpers.md)

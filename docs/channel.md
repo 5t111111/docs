@@ -1,11 +1,11 @@
-# Channel
+# チャンネル
 
-Controllers provide a `#channel` method, that you can use to get the status of the connection to the backend.  Channel's access methods are reactive and when the status changes, the watching computations will be re-triggered.  It provides the following:
+コントローラーは `#channel` メソッドを持っていて、それを使うことでバックエンドへの接続の状態を知ることができます。チャンネルのアクセスメソッドはリアクティブであるため、状態が変わったときには監視中の評価が再度トリガーされます。以下が提供されています。
 
-| method      | description                                               |
+| メソッド    | 詳細                                                      |
 |-------------|-----------------------------------------------------------|
-| connected?  | true if it is connected to the backend                    |
-| status      | possible values: :opening, :open, :closed, :reconnecting  |
-| error       | the error message for the last failed connection          |
-| retry_count | the number of reconnection attempts that have been made without a successful connection |
-| reconnect_interval | the time until the next reconnection attempt (in seconds) |
+| connected?| バックエンドに接続されていれば true となる                    |
+| status      | これらのいずれかの値となる :opening, :open, :closed, :reconnecting  |
+| error       | 最後に失敗した接続のエラーメッセージ         |
+| retry_count | 再接続を試行した回数 (成功した接続は除く)|
+| reconnect_interval | 次に再接続を試行するまでの時間 (秒) |
