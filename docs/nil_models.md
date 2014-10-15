@@ -10,7 +10,7 @@ page._info._name
 # => <Model:70260795424200 nil>
 
 page._info._name = 'Ryan'
-# => <Model:70161625994820 {:_info=><Model:70161633901800 {:_name=>"Ryan"}>}>
+# => <Model:70161625994820 {:info=><Model:70161633901800 {:name=>"Ryan"}>}>
 ```
 
 ただし、1つ注意しておくべきことは、NilModel は「真」の値であるということです。(Ruby では nil と false のみが false として扱われます。)分かりやすくするために、NilModel に対して ```.nil?``` を実行すると true を返すようになっています。
@@ -31,4 +31,4 @@ page._info._name = 'Ryan'
 
 `#and` は && と同様の働きをします。#and と #or によって、NilModel も含めて、初期値の扱いを簡単にすることができます。
 
--- TODO: Document .true? / .false?
+-- TODO: Document .true?/ .false?

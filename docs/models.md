@@ -22,7 +22,7 @@ page._settings._color
 # => @'blue'
 
 page._settings
-# => @#<Model:_settings {:_color=>"blue"}>
+# => @#<Model:_settings {:color=>"blue"}>
 ```
 
 ネストされたデータは、代入時に自動的に設定されます。上記の例では、page._setting は page モデルの一部を形成するモデルとなります。このことによって、事前に設定を行うことなく、ネストされたモデルをバインディングすることが可能になっています。
@@ -33,14 +33,14 @@ Volt のモデルでは、複数形の名前を持ったプロパティは Array
 page._items
 # #<ArrayModel:70303686333720 []>
 
-page._items << {_name: 'Item 1'}
+page._items << {name: 'Item 1'}
 
 page._items
-# #<ArrayModel:70303686333720 [<Model:70303682055800 {:_name=>"Item 1"}>]>
+# #<ArrayModel:70303686333720 [<Model:70303682055800 {:name=>"Item 1"}>]>
 
 page._items.size
 # => 1
 
 page._items[0]
-# => <Model:70303682055800 {:_name=>"Item 1"}>
+# => <Model:70303682055800 {:name=>"Item 1"}>
 ```

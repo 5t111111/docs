@@ -6,11 +6,10 @@ Volt では、HTTP を介してクライアントとサーバー間のデータ�
 
 ページの HTML はテンプレート言語で記述し、```{{``` と ```}}``` で囲むことで Ruby のコードを直接書くことができます。Volt は、DOM (および値が更新されたことを検知したい他のすべてのコード)に対して、自動的に、かつ正確に変更を伝えるために、データフロー／リアクティブプログラミングを利用します。 DOM に何らかの変更があった場合に、Volt は変更が必要なノードだけを正しく更新することができます。
 
-いくつかのデモ動画を用意しています。
-** 注意: これらのビデオは古いものです。近日中に新しいビデオを公開する予定です。
- - [Volt での Todoアプリケーション の例](https://www.youtube.com/watch?v=6ZIvs0oKnYs)
- - [Volt でブログを構築する](https://www.youtube.com/watch?v=c478sMlhx1o)
- - [Volt のリアクティブバリューについて](https://www.youtube.com/watch?v=yZIQ-2irY-Q)
+いくつかの動画を用意しているのでご覧ください:
+- [Volt で作る Todo のサンプル (Volt Todos Example)](https://www.youtube.com/watch?v=Tg-EtRnMz7o)
+- [Volt でブログを構築する](https://www.youtube.com/watch?v=c478sMlhx1o)
+** 注意: ブログの動画は古いものですので、新しいものを用意する予定です。
 
 デモアプリケーションも用意しています。
  - https://github.com/voltrb/todos3

@@ -8,8 +8,8 @@
     user = Model.new
     user._name = 'Ryan'
     user._profiles = {
-      _twitter: 'http://www.twitter.com/ryanstout',
-      _dribbble: 'http://dribbble.com/ryanstout'
+      twitter: 'http://www.twitter.com/ryanstout',
+      dribbble: 'http://dribbble.com/ryanstout'
     }
 
     user._name
@@ -30,7 +30,7 @@ Model の中のアレイは自動的に ArrayModel のインスタンスに変�
 
 ```ruby
     model = Model.new
-    model._items << {_name: 'item 1'}
+    model._items << {name: 'item 1'}
     model._items.class
     # => ArrayModel
 
@@ -51,7 +51,7 @@ Model や ArrayModel を通常のハッシュに戻したい場合には、そ�
     }
 
     user._profiles.to_h
-    # => {_twitter: 'http://www.twitter.com/ryanstout', _dribbble: 'http://dribbble.com/ryanstout'}
+    # => {twitter: 'http://www.twitter.com/ryanstout', dribbble: 'http://dribbble.com/ryanstout'}
 
     items = ArrayModel.new([1,2,3,4])
     # => #<ArrayModel:70226521081980 [1, 2, 3, 4]>
