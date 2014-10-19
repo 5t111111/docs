@@ -3,7 +3,7 @@
 モデルはデータが更新されたときにイベントをトリガーします。現在、モデルは added と removed の2つのイベントを発生させます。例:
 
 ```ruby
-    model = Model.new
+    model = Volt::Model.new
 
     model._items.on('added') { puts 'item added' }
     model._items << 1

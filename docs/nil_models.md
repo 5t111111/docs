@@ -4,13 +4,13 @@
 
 ```ruby
 page._info
-# => <Model:70260787225140 nil>
+# => <Volt::Model:70260787225140 nil>
 
 page._info._name
-# => <Model:70260795424200 nil>
+# => <Volt::Model:70260795424200 nil>
 
 page._info._name = 'Ryan'
-# => <Model:70161625994820 {:info=><Model:70161633901800 {:name=>"Ryan"}>}>
+# => <Volt::Model:70161625994820 {:info => <Volt::Model:70161633901800 {:name => "Ryan"}>}>
 ```
 
 ただし、1つ注意しておくべきことは、NilModel は「真」の値であるということです。(Ruby では nil と false のみが false として扱われます。)分かりやすくするために、NilModel に対して ```.nil?``` を実行すると true を返すようになっています。

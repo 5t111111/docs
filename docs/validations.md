@@ -5,7 +5,7 @@
 現在のところ、2種類 ( length と presence ) のバリデーションが実装されています。これから沢山のバリデーションを追加していく予定です。
 
 ```ruby
-    class Info < Model
+    class Info < Volt::Model
       validate :_name, length: 5
       validate :_state, presence: true
     end

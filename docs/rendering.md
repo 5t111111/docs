@@ -50,7 +50,7 @@ page._last = 'Jones'
 # => Jimmy Jones
 ```
 
-```.watch!``` を実行すると、その戻り値として返ってくるのは Computation (評価) オブジェクトです。もうこれ以上更新を知らせる必要がない場合には、 Computation オブジェクトに対して ```.stop``` メソッドを実行してください。
+```.watch!``` を実行すると、その戻り値として返ってくるのは Volt::Computation (評価) オブジェクトです。もうこれ以上更新を知らせる必要がない場合には、 Computation オブジェクトに対して ```.stop``` メソッドを実行してください。
 
 ```ruby
 page._name = 'Ryan'

@@ -4,13 +4,13 @@
 
 ```ruby
     page._info.class
-    # => Model
+    # => Volt::Model
 ```
 
-標準の Model クラスの代わりに、自分でクラスを用意してそれを読み込むことも可能です。クラスは /app/{component}/models フォルダに格納します。例えば、```app/main/info.rb``` という具合です。このとき、モデルとするクラスは ```Model``` を継承している必要があります。
+標準の Model クラスの代わりに、自分でクラスを用意してそれを読み込むことも可能です。クラスは /app/{component}/models フォルダに格納します。例えば、```app/main/info.rb``` という具合です。このとき、モデルとするクラスは ```Volt::Model``` を継承している必要があります。
 
 ```ruby
-    class Info < Model
+    class Info < Volt::Model
     end
 ```
 
